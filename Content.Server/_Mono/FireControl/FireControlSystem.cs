@@ -266,7 +266,28 @@ public sealed partial class FireControlSystem : EntitySystem
             if (!TryComp<GunComponent>(localWeapon, out var gun))
                 continue;
 
-            var weaponXform = Transform(localWeapon);
+            if (TryComp<TransformComponent>(localWeapon, out var weaponXform))
+            {
+                var currentMapCoords = _xform.GetMapCoordinates(localWeapon, weaponXform);
+                var destinationMapCoords = targetCoords.ToMap(EntityManager, _xform);
+
+                if (destinationMapCoords.MapId == currentMapCoords.MapId && currentMapCoords.MapId != MapId.Nullspace)
+                {
+                    var diff = destinationMapCoords.Position - currentMapCoords.Position;
+                    if (TryComp<FireControlRotateComponent>(localWeapon, out var rotateEnabled))
+                    if (diff.LengthSquared() > 0.01f)
+                    {
+                        // Only rotate the gun if it has line of sight to the target
+                        if (HasLineOfSight(localWeapon, currentMapCoords.Position, destinationMapCoords.Position, currentMapCoords.MapId))
+                        {
+                            var goalAngle = Angle.FromWorldVec(diff);
+                            _rotateToFace.TryRotateTo(localWeapon, goalAngle, 0f, Angle.FromDegrees(1), float.MaxValue, weaponXform);
+                        }
+                    }
+                }
+            }
+
+            var weaponX = Transform(localWeapon);
             var targetPos = targetCoords.ToMap(EntityManager, _xform);
 
             if (targetPos.MapId != weaponXform.MapID)
