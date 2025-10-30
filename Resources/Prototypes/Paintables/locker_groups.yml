@@ -37,7 +37,6 @@
     basic: ClosetSteelBase
     biohazard: ClosetL3
     biohazard-janitor: ClosetL3Janitor
-    biohazard-science: ClosetL3Science
     biohazard-security: ClosetL3Security
     biohazard-virology: ClosetL3Virology
     bomb: ClosetBomb
