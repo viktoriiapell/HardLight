@@ -88,7 +88,7 @@
 
 # MAXIM Nerfed: used best stats from spationaut, mining and luxury hardsuits, additionally increased caustic resistance
 - type: entity
-  parent: [ ClothingOuterHardsuitMaxim, BaseC3ExpeditionContraband ]
+  parent: [ BaseC2ExpeditionContraband, ClothingOuterHardsuitMaxim ] # C2 parent needs to be first
   id: ClothingOuterHardsuitMaximPrototype
   name: experimental salvager hardsuit
   description: Fire. Heat. These things forge great weapons, they also forge great salvagers.
@@ -114,6 +114,9 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitMaximPrototype
+  - type: EnergyDomeGenerator # Hardlight
+    damageEnergyDraw: 11 # Nerfed, due to being a worse maxim suit
+    domePrototype: EnergyDomeSmallBlue # TODO purple dome
 
 # Syndicate NPC hard suit, unremoveable
 - type: entity
