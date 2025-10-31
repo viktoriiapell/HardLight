@@ -376,6 +376,9 @@
     # Shitmed Change
     - BorgModulesDynamic
     - SMCybernetics
+    # Hardlight Change
+    - BorgArmorEnergy
+    - BorgArmorPhys
   - type: MaterialStorage
     whitelist:
       tags:

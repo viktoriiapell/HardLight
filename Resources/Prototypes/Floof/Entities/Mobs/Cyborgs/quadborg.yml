@@ -5,6 +5,8 @@
   components:
   - type: Body
     prototype: Quadborg
+  - type: Inventory
+    templateId: borgquad #Hardlight - Changes Quadborgs over to use our armor slots
   - type: Sprite
     sprite: Floof/Mobs/Silicon/quad.rsi
     scale: 0.7, 0.7
@@ -27,11 +29,15 @@
       movement:
         state: quadsprite
   - type: Stripping
-  - type: Strap
+  - type: Strap #Hardlight. Enables buckling to borgs
+    blacklist: # Hardlight. Stop crashing the damned clients and server!
+      components:
+      - BorgChassis
     position: Stand
-    buckleOffset: "0,0.5"
+    buckleOffset: "0,-0.2"
+    buckleSelfDoafterTime: 4.5 # people attempting to buckle to the borg will have a doafter
   - type: Sanitized
-  - type: Hands 
+  - type: Hands
   - type: Cuffable
   - type: ComplexInteraction
   - type: IntrinsicRadioTransmitter

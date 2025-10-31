@@ -1,0 +1,30 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Made By Dakota and Fenndragon. Part of the Hardlight Station Project.",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+    {
+      "name": "icon"
+    },
+    {
+      "name": "equipped-BORGARMOR",
+      "directions": 4
+    },
+    {
+      "name": "equipped-BORGARMOR-default",
+      "directions": 4
+    },
+    {
+      "name": "on-equipped-BORGARMOR",
+      "directions": 4
+    },
+    {
+      "name": "off-equipped-BORGARMOR",
+      "directions": 4
+    }
+    ]
+}

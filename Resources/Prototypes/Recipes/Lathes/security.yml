@@ -351,13 +351,3 @@
     Plastic: 500
     Gold: 300
     Silver: 300
-
-- type: latheRecipe
-  id: EnergyDomeDirectionalTurtle
-  result: EnergyDomeDirectionalTurtle
-  completetime: 12
-  materials:
-    Steel: 1000
-    Plastic: 500
-    Gold: 250
-    Uranium: 50

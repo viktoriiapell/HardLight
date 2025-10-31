@@ -305,3 +305,8 @@
 # Batteries
 - type: Tag
   id: PowerCellHigh
+
+#Borgs
+- type: Tag
+  id: BorgWearable
+
