@@ -1443,7 +1443,7 @@
       - !type:WashCreamPieReaction
   - type: LabGrown # Frontier
   - type: LeashAnchor # Floofstation
-
+  - type: LayingDown # HL
 
 
 - type: entity
