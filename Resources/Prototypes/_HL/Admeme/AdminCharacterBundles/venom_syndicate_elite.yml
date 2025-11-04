@@ -13,6 +13,7 @@
   description: A port for waste/exhaust gas built into Venom's chest.
   id: EnergyDomeGeneratorPersonalSyndieVenomChestGas
   parent: EnergyDomeGeneratorPersonalSyndie
+  suffix: Venom, Admin
   components:
   - type: Item
     size: Tiny
@@ -397,6 +398,7 @@
   impactFlash:
     sprite: _Goobstation/Objects/Weapons/Guns/Projectiles/small_laser.rsi
     state: impact_beam_light_overcharged
+
 
 
 
