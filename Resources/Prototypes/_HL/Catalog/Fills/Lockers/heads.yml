@@ -12,21 +12,20 @@
     - id: BoxFolderQmClipboard
     - id: CargoBountyComputerCircuitboard
     - id: CargoRequestComputerCircuitboard
-    - id: CargoSaleComputerCircuitboard # Frontier
-    - id: CargoShuttleComputerCircuitboard # Frontier
-    - id: CargoShuttleConsoleCircuitboard # Frontier
-    - id: SalvageMagnetMachineCircuitboard # Frontier
-    - id: EncryptionKeyCommand
-    - id: CigPackGreen # Frontier
-      prob: 0.50 # Frontier
-    - id: HLClothingHeadsetAltCargo
-    - id: DoorRemoteCargo # Frontier
+    - id: CargoSaleComputerCircuitboard
+    - id: CargoShuttleComputerCircuitboard
+    - id: CargoShuttleConsoleCircuitboard
+    - id: SalvageMagnetMachineCircuitboard
+    - id: CigPackGreen
+      prob: 0.50
+    - id: ClothingHeadsetAltCargo
+    - id: DoorRemoteCargo
     - id: RubberStampApproved
     - id: RubberStampDenied
     - id: RubberStampQm
-    - id: AstroNavCartridge # Frontier
-    - id: MailTeleporterMachineCircuitboard # Frontier
-    - id: ClothingBeltUtilityEngineering # Frontier
+    - id: AstroNavCartridge
+    - id: MailTeleporterMachineCircuitboard
+    - id: ClothingBeltUtilityEngineering
     - id: QuartermasterIDCard
 
 - type: entity
@@ -49,7 +48,6 @@
       prob: 0.25
     - id: ClothingBeltSheathFilled
     - id: ClothingHeadsetAltCommand
-    - id: EncryptionKeyCommand
     - id: ClothingOuterArmorCaptainCarapace
     - id: CommsComputerCircuitboard
     - id: DoorRemoteCommand
@@ -123,7 +121,6 @@
     - id: BoxEncryptionKeyService
     - id: BoxHeadset
     - id: BoxID
-    - id: EncryptionKeyCommand
     - id: BoxPDA
     - id: CigarGoldCase
       prob: 0.25
@@ -164,8 +161,7 @@
     - id: ClothingBeltChiefEngineerFilled
     - id: ClothingEyesGlassesMeson
     - id: ClothingHandsGlovesColorYellow
-    - id: EncryptionKeyCommand
-    - id: HLClothingHeadsetAltEngineering
+    - id: ClothingHeadsetAltEngineering
     - id: DoorRemoteEngineering
     - id: CargoRequestEngineeringComputerCircuitboard # Frontier
     - id: RCD
@@ -183,11 +179,9 @@
     children:
     - id: ClothingMaskGasAtmos
     - id: ClothingOuterHardsuitEngineeringWhite
-    - id: ClothingShoesBootsMagAdv # Frontier
-    - id: ClothingShoesBootsMag # Frontier
-    - id: JetpackVoidFilled # Frontier
-    - id: OxygenTankFilled # Frontier
-    - id: NFTankO2N2EqualFilled # Frontier
+    - id: ClothingShoesBootsMagAdv
+    - id: JetpackVoidFilled
+    - id: NFTankO2N2EqualFilled
 
 # No hardsuit locker
 - type: entity
@@ -226,10 +220,9 @@
     - id: ClothingEyesHudMedical
     - id: ClothingHandsGlovesNitrile
     - id: ClothingHeadHatBeretCmo
-    - id: HLClothingHeadsetAltMedical
+    - id: ClothingHeadsetAltMedical
     - id: DoorRemoteMedical
     - id: HandheldCrewMonitor
-    - id: EncryptionKeyCommand
     - id: Hypospray
     - id: MedicalTechFabCircuitboard
     - id: CargoRequestMedicalComputerCircuitboard
@@ -285,8 +278,7 @@
     - id: BoxEncryptionKeyScience
     - id: CircuitImprinterMachineCircuitboard
     - id: ClothingBeltUtilityEngineering
-    - id: HLClothingHeadsetAltScience
-    - id: EncryptionKeyCommand
+    - id: ClothingHeadsetAltScience
     - id: DoorRemoteResearch
     - id: HandTeleporter
     - id: ProtolatheMachineCircuitboard
@@ -344,7 +336,6 @@
     - id: ClothingBeltSecurityFilled
     - id: ClothingEyesGlassesSecurity
     - id: ClothingHeadsetAltSecurity
-    - id: EncryptionKeyCommand
     - id: ClothingMaskNeckGaiter
     - id: ClothingOuterCoatHoSTrench
     - id: ClothingShoesBootsJack
