@@ -9,7 +9,7 @@
     sprite: Clothing/Back/Backpacks/backpack.rsi
     state: icon
   - type: Item
-    size: Huge
+    size: Ginormous
   - type: Clothing
     quickEquip: false
     slots:

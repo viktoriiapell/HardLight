@@ -6,7 +6,7 @@
   - type: Sprite
     state: icon
   - type: Item
-    size: Normal
+    size: Huge
   - type: Clothing
     slots: [belt]
     equipSound:
@@ -24,7 +24,7 @@
   id: ClothingBeltStorageBase
   components:
   - type: Storage
-    maxItemSize: Normal
+    maxItemSize: Small
     defaultStorageOrientation: Vertical
     grid:
     - 0,0,7,1
