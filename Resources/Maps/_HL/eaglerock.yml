@@ -4,7 +4,7 @@ meta:
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 11/29/2025 03:23:37
+  time: 11/29/2025 03:42:30
   entityCount: 21053
 maps:
 - 1
@@ -77,19 +77,18 @@ entities:
     - type: OccluderTree
   - uid: 2
     components:
-    - type: BecomesStation
-      id: Eaglerock Outpost
     - type: MetaData
       name: Eaglerock
-    - type:
+    - type: Transform
+      pos: -0.5,-0.515625
+      parent: 1
+    - type: BecomesStation
+      id: Eaglerock Outpost
     - type: SalvageMobRestrictionsGrid
       mobsToKill: []
     - type: NavMap
     - type: WorldGenDistanceCarver
       distanceThresholds: []
-    - type: Transform
-      pos: -0.5,-0.515625
-      parent: 1
     - type: MapGrid
       chunks:
         0,0:
@@ -3390,29 +3389,30 @@ entities:
           2,1:
             0: 1919
           2,2:
-            1: 4383
+            1: 287
           2,-1:
             0: 30583
           2,3:
-            1: 4369
+            1: 8928
             0: 32768
           2,4:
-            1: 785
+            1: 802
             0: 10376
           3,0:
             0: 65295
           3,1:
             0: 3545
           3,2:
-            1: 34959
+            1: 61455
           3,3:
+            1: 17
             0: 64704
           3,-1:
             0: 65521
           3,4:
             0: 3549
           4,2:
-            1: 17477
+            1: 29765
           4,3:
             0: 30704
           -4,-1:
@@ -3438,13 +3438,13 @@ entities:
           -3,1:
             0: 3066
           -3,2:
-            1: 4383
+            1: 15
           -3,3:
-            1: 4369
+            1: 4096
           -3,-1:
             0: 63200
           -3,4:
-            1: 24337
+            1: 4369
           -2,0:
             0: 48056
           -2,1:
@@ -3455,9 +3455,7 @@ entities:
           -2,-1:
             0: 47290
           -2,3:
-            1: 8746
-          -2,4:
-            1: 44834
+            1: 8
           -1,-1:
             0: 62130
           -1,4:
@@ -3825,7 +3823,7 @@ entities:
             0: 65295
           8,-8:
             1: 35056
-            0: 12288
+            0: 28672
           8,-7:
             0: 62259
             1: 136
@@ -4278,7 +4276,7 @@ entities:
             1: 49152
           15,8:
             0: 273
-            1: 204
+            1: 17612
           16,5:
             0: 13175
           16,6:
@@ -4367,22 +4365,24 @@ entities:
             4: 12288
           12,10:
             3: 17
+            1: 61440
             4: 204
           11,10:
             3: 136
+            1: 61440
             4: 51
           13,10:
-            1: 254
+            1: 61694
           13,9:
             1: 61166
           14,9:
             1: 65535
           14,10:
-            1: 255
+            1: 61695
           15,9:
-            1: 4369
+            1: 21845
           15,10:
-            1: 49
+            1: 29813
           8,9:
             0: 16383
             5: 32768
@@ -4396,23 +4396,26 @@ entities:
             0: 187
             1: 61440
           8,11:
-            1: 4095
+            1: 65535
           7,11:
-            1: 4095
+            1: 65535
           9,9:
             0: 4095
             5: 4096
             6: 49152
           9,10:
             5: 17
-            1: 4096
+            1: 61440
             6: 204
           9,11:
-            1: 273
+            1: 13107
+          9,12:
+            1: 8738
           10,9:
             0: 4095
             4: 24576
           10,10:
+            1: 61440
             4: 102
           3,8:
             0: 61678
@@ -4446,7 +4449,7 @@ entities:
             0: 238
             1: 57344
           6,11:
-            1: 3822
+            1: 61166
           0,5:
             0: 57341
           -1,5:
@@ -4534,22 +4537,21 @@ entities:
           -4,8:
             1: 3810
           -3,5:
-            1: 21845
+            1: 4369
           -3,6:
-            1: 21845
+            1: 4369
           -3,7:
-            1: 21845
-          -3,8:
-            1: 1013
-            0: 32768
+            1: 1
+          -2,4:
+            1: 34816
           -2,5:
-            1: 43690
+            1: 34952
           -2,6:
-            1: 43690
+            1: 34952
           -2,7:
-            1: 43690
+            1: 34952
           -2,8:
-            1: 250
+            1: 248
             0: 61440
           -5,8:
             0: 40409
@@ -4569,6 +4571,9 @@ entities:
             0: 56783
           -4,12:
             0: 61695
+          -3,8:
+            1: 1008
+            0: 32768
           -3,9:
             0: 34959
             1: 13056
@@ -4913,16 +4918,35 @@ entities:
             0: 65528
           8,15:
             0: 15
+            1: 7936
+          8,16:
+            1: 4369
+          9,15:
+            1: 802
+          9,13:
+            1: 8738
+          9,14:
+            1: 8738
           3,16:
             0: 3823
           4,17:
             0: 13104
+            1: 34944
           3,17:
             0: 65520
           4,18:
             0: 3
+            1: 8
           3,18:
             0: 8
+          5,17:
+            1: 240
+          6,17:
+            1: 240
+          7,17:
+            1: 240
+          8,17:
+            1: 17
           0,16:
             0: 34955
             1: 12800
@@ -5087,6 +5111,7 @@ entities:
         chunkSize: 4
     - type: GasTileOverlay
     - type: RadiationGridResistance
+    - type: IFF
   - uid: 3698
     mapInit: true
     paused: true
@@ -7845,7 +7870,7 @@ entities:
       pos: -21.5,45.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -19423.295
+      secondsUntilStateChange: -19449.018
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -8596,7 +8621,7 @@ entities:
       pos: -23.5,-12.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -105737.75
+      secondsUntilStateChange: -105763.47
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -8608,7 +8633,7 @@ entities:
       pos: -23.5,-13.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -105928.15
+      secondsUntilStateChange: -105953.87
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -8641,7 +8666,7 @@ entities:
       pos: -23.5,-1.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -97566.805
+      secondsUntilStateChange: -97592.52
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -8726,7 +8751,7 @@ entities:
       pos: 21.5,-13.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -86957.25
+      secondsUntilStateChange: -86982.97
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -8772,7 +8797,7 @@ entities:
       pos: 23.5,-5.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -56927.953
+      secondsUntilStateChange: -56953.676
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -9006,7 +9031,7 @@ entities:
       pos: 20.5,17.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -56475.887
+      secondsUntilStateChange: -56501.61
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -9747,7 +9772,7 @@ entities:
       pos: -23.5,39.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -13901.034
+      secondsUntilStateChange: -13926.756
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
