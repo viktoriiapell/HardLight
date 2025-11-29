@@ -14,7 +14,7 @@
   name: 'Listening Point Bravo'
   minimumDistance: 9000
   maximumDistance: 10000
-  spawnGroup: SyndicateFOB
+  spawnGroup: MarketStation
   gridPath: /Maps/_NF/POI/lpbravo.yml
   hideWarp: true
   addComponents:

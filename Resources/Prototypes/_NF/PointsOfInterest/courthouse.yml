@@ -14,7 +14,7 @@
   name: "Courthouse"
   minimumDistance: 4250
   maximumDistance: 5050
-  spawnGroup: Required
+  spawnGroup: MarketStation
   gridPath: /Maps/_NF/POI/courthouse.yml
   addComponents:
   - type: IFF

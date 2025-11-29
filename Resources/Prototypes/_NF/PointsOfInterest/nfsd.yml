@@ -14,7 +14,7 @@
   name: 'TSFMC Sector FOB'
   minimumDistance: 4750
   maximumDistance: 6500
-  spawnGroup: Required
+  spawnGroup: MarketStation
   gridPath: /Maps/_NF/POI/nfsd.yml
   addComponents:
   - type: IFF

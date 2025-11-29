@@ -14,7 +14,7 @@
   name: 'Anomalous Geode'
   minimumDistance: 7800
   maximumDistance: 10800
-  spawnGroup: ScienceLab
+  spawnGroup: MarketStation
   gridPath: /Maps/_NF/POI/anomalousgeode.yml
   addComponents:
   - type: SolarPoweredGrid
