@@ -21,6 +21,7 @@
     - id: ClothingHandsKnuckleDustersQM
     - id: MailTeleporterMachineCircuitboard
     - id: ClothingBeltUtilityEngineering # Frontier
+    - id: ClothingOuterHardsuitLuxmax #HL
 
 - type: entity
   id: LockerQuarterMasterFilled
