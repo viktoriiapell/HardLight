@@ -27,7 +27,6 @@ public sealed class ShipyardConsoleBoundUserInterface : BoundUserInterface
     public int? ShipSellValue { get; private set; }
 
     private Button? _loadShipButton;
-    private Button? _cancelLoadButton;
     private Button? _saveShipButton;
     private ItemList? _savedShipsList;
     private int _selectedShipIndex = -1;
@@ -78,14 +77,11 @@ public sealed class ShipyardConsoleBoundUserInterface : BoundUserInterface
         }
 
         _loadShipButton = _menu.FindControl<Button>("LoadShipButton");
-        _cancelLoadButton = _menu.FindControl<Button>("CancelLoadButton");
         _saveShipButton = _menu.FindControl<Button>("SaveShipButton");
         _savedShipsList = _menu.FindControl<ItemList>("SavedShipsList");
 
         if (_loadShipButton != null)
             _loadShipButton.OnPressed += OnLoadShipButtonPressed;
-        if (_cancelLoadButton != null)
-            _cancelLoadButton.OnPressed += _ => SendMessage(new ShipyardConsoleCancelLoadMessage());
         // Save button already wired via ShipyardConsoleMenu to raise OnSaveShip, which we handle in SaveShip()
         // Avoid wiring a second handler that would incorrectly send a direct save request.
         if (_savedShipsList != null)

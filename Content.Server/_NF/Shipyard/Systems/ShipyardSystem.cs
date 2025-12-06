@@ -21,7 +21,7 @@ using Robust.Shared.EntitySerialization.Systems;
 using Robust.Shared.Utility;
 using Robust.Shared.ContentPack;
 using Content.Shared.Shuttles.Components; // For IFFComponent
-using Robust.Shared.Timing;
+using Content.Shared.Timing;
 using Content.Server.Gravity;
 using Robust.Shared.Physics;
 using Robust.Shared.Map.Components;
@@ -44,9 +44,9 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
     [Dependency] private readonly IEntitySystemManager _entitySystemManager = default!;
     [Dependency] private readonly IResourceManager _resources = default!;
     [Dependency] private readonly SharedContainerSystem _container = default!; // For safe container removal before deletion
+    [Dependency] private readonly UseDelaySystem _useDelay = default!;
     [Dependency] private readonly GravitySystem _gravitySystem = default!; // For post-load gravity refresh
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
 
     private EntityQuery<TransformComponent> _transformQuery;
 
@@ -243,7 +243,14 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
             _sawmill.Warning($"[ShipLoad] PurgeJointsAndResetDocks failed on {grid}: {ex.Message}");
         }
 
-        // Removed legacy UseDelay reset; no-op here.
+        try
+        {
+            TryResetUseDelays(grid);
+        }
+        catch (Exception ex)
+        {
+            _sawmill.Warning($"[ShipLoad] TryResetUseDelays failed on {grid}: {ex.Message}");
+        }
 
         // Add new grid to the same station as the console's grid (for IFF / ownership), if any
         if (TryComp<StationMemberComponent>(consoleXform.GridUid, out var stationMember))
@@ -327,7 +334,22 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
         }
     }
 
-    // Removed legacy UseDelay reset logic as UseDelayComponent/System are unavailable in this codebase.
+    /// <summary>
+    /// Tries to reset the delays on any entities with the UseDelayComponent.
+    /// Needed to ensure items don't have prolonged delays after saving.
+    /// </summary>
+    private void TryResetUseDelays(EntityUid shuttleGrid)
+    {
+        var useDelayQuery = _entityManager.EntityQueryEnumerator<UseDelayComponent, TransformComponent>();
+
+        while (useDelayQuery.MoveNext(out var uid, out var comp, out var xform))
+        {
+            if (xform.GridUid != shuttleGrid)
+                continue;
+
+            _useDelay.ResetAllDelays((uid, comp));
+        }
+    }
 
     /// <summary>
     /// Safely deletes an entity by ensuring it is first removed from any container relationships, and

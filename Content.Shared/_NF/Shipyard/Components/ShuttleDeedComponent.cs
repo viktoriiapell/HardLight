@@ -26,16 +26,5 @@ namespace Content.Shared._NF.Shipyard.Components
 
         [DataField, AutoNetworkedField]
         public bool PurchasedWithVoucher;
-
-        // Metadata to support refunding dock/load fees if saved shortly after load
-        // Set on the shuttle and/or deed at load time; evaluated at save time.
-        [DataField, AutoNetworkedField]
-        public TimeSpan? LastLoadTime;
-
-        [DataField, AutoNetworkedField]
-        public int LastLoadCost;
-
-        [DataField, AutoNetworkedField]
-        public string? LastLoaderUserId;
     }
 }

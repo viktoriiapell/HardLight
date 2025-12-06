@@ -562,16 +562,6 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
                 ("ship", name), ("cost", appraisalCost)));
         }
 
-        // Record recent load metadata for potential refund if saved shortly after
-        if (_player.TryGetSessionByEntity(player, out var sess))
-        {
-            var shipDeedMeta = EnsureComp<ShuttleDeedComponent>(shuttleUid);
-            shipDeedMeta.LastLoadTime = _timing.CurTime;
-            shipDeedMeta.LastLoadCost = appraisalCost;
-            shipDeedMeta.LastLoaderUserId = sess.UserId.ToString();
-            Dirty(shuttleUid, shipDeedMeta);
-        }
-
         // Important: Treat loaded ships like independent shuttles, not part of the console's station.
         // The purchase-from-file path temporarily adds the grid to the console's station for IFF/ownership.
         // That causes station-wide events (alerts, etc.) to target the loaded ship. Remove that membership here.

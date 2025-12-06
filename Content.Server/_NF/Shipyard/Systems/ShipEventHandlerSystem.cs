@@ -7,9 +7,6 @@ using Robust.Shared.GameObjects;
 using Robust.Shared.IoC;
 using Robust.Shared.Log;
 using Robust.Server.GameObjects;
-using Content.Server._NF.Bank;
-using Content.Shared._NF.Bank.Components;
-using Robust.Shared.Timing;
 
 namespace Content.Server._NF.Shipyard.Systems;
 
@@ -21,8 +18,6 @@ public sealed class ShipEventHandlerSystem : EntitySystem
 {
     [Dependency] private readonly IEntityManager _entityManager = default!;
     [Dependency] private readonly UserInterfaceSystem _userInterface = default!;
-    [Dependency] private readonly BankSystem _bank = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
 
     private ISawmill _sawmill = default!;
 
@@ -46,37 +41,6 @@ public sealed class ShipEventHandlerSystem : EntitySystem
         try
         {
             _sawmill.Info($"Handling ShipSavedEvent for ship '{args.ShipName}' by player {args.PlayerUserId}");
-
-            // Refund logic: if this ship was loaded within the last 5 minutes by the same player, refund the load cost
-            if (_entityManager.TryGetComponent<ShuttleDeedComponent>(args.GridUid, out var deed))
-            {
-                if (deed.LastLoadTime is { } lastLoadTime && deed.LastLoadCost > 0 && !string.IsNullOrEmpty(deed.LastLoaderUserId))
-                {
-                    var elapsed = _timing.CurTime - lastLoadTime;
-                    if (elapsed <= TimeSpan.FromMinutes(5) && string.Equals(deed.LastLoaderUserId, args.PlayerUserId, StringComparison.Ordinal))
-                    {
-                        var attached = args.PlayerSession?.AttachedEntity;
-                        if (attached is { Valid: true } ent && _entityManager.HasComponent<BankAccountComponent>(ent))
-                        {
-                            var refunded = _bank.TryBankDeposit(ent, deed.LastLoadCost);
-                            if (refunded)
-                            {
-                                _sawmill.Info($"Refunded {deed.LastLoadCost} credits to {args.PlayerUserId} for saving '{args.ShipName}' within refund window.");
-                            }
-                            else
-                            {
-                                _sawmill.Warning($"Failed to refund {deed.LastLoadCost} credits to {args.PlayerUserId} for '{args.ShipName}'.");
-                            }
-                        }
-
-                        // Clear metadata to prevent repeated refunds
-                        deed.LastLoadTime = null;
-                        deed.LastLoadCost = 0;
-                        deed.LastLoaderUserId = null;
-                        Dirty(args.GridUid, deed);
-                    }
-                }
-            }
 
             // For ship saves, we could update specific console if we had the console ID
             // For now, we just log the successful save
