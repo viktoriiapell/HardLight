@@ -45,3 +45,5 @@
 
 - type: consentToggle
   id: NSFWDescriptions
+  name: See NSFW Descriptions
+  description: Turn this on to see any temporary descriptions that are flagged as NSFW.
