@@ -265,10 +265,10 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
             /* if (tagged > 0)
                 _sawmill.Info($"TagStashContents: Added SecretStashComponent to {tagged} hidden item(s) on grid {gridUid}"); */
         }
-        /* catch (Exception e)
+        catch (Exception e)
         {
             _sawmill.Warning($"TagStashContents: Exception while tagging stash contents on grid {gridUid}: {e.Message}");
-        } */
+        }
     }
 
 
@@ -314,10 +314,10 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
             /* if (linksRemoved > 0)
                 _sawmill.Info($"CleanupBrokenDeviceLinks: Removed {linksRemoved} broken device link(s) from {sourcesProcessed} source(s) on grid {gridUid}"); */
         }
-        /* catch (Exception e)
+        catch (Exception e)
         {
             _sawmill.Warning($"CleanupBrokenDeviceLinks: Exception while cleaning device links on grid {gridUid}: {e.Message}");
-        } */
+        }
     }
 
     /// <summary>
@@ -458,10 +458,10 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
             // Then delete loose ones
             DeleteEntityList(looseDeletes, "loose");
         }
-        /* catch (Exception ex)
+        catch (Exception ex)
         {
             _sawmill.Error($"Exception during PurgeTransientEntities on grid {gridUid}: {ex}");
-        } */
+        }
     }
 
     /// <summary>
@@ -595,10 +595,10 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
                 if (Exists(ent))
                     Del(ent);
             }
-            /* catch (Exception ex)
+            catch (Exception ex)
             {
                 _sawmill.Warning($"Failed deleting {category} entity {ent}: {ex.Message}");
-            } */
+            }
         }
     }
 
@@ -617,10 +617,10 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
         {
             root["nullspace"] = new SequenceDataNode();
         }
-        /* catch (Exception e)
+        catch (Exception e)
         {
             _sawmill.Warning($"Failed to clear nullspace: {e.Message}");
-        } */
+        }
 
         if (!root.TryGet("entities", out SequenceDataNode? protoSeq) || protoSeq == null)
             return;
@@ -1321,10 +1321,10 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
                 // Remove any other problematic components
                 // Note: We're being conservative here - removing things that commonly cause issues
             }
-            /* catch (Exception ex)
+            catch (Exception ex)
             {
                 _sawmill.Warning($"Error cleaning entity {entity}: {ex}");
-            } */
+            }
         }
 
         //_sawmill.Info($"Grid cleanup complete: deleted {entitiesRemoved} entities, removed {componentsRemoved} components from {remainingEntities.Count} remaining entities");

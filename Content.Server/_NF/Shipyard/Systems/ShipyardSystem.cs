@@ -240,19 +240,19 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
         {
             PurgeJointsAndResetDocks(grid);
         }
-        /* catch (Exception ex)
+        catch (Exception ex)
         {
             _sawmill.Warning($"[ShipLoad] PurgeJointsAndResetDocks failed on {grid}: {ex.Message}");
-        } */
+        }
 
         try
         {
             TryResetUseDelays(grid);
         }
-        /* catch (Exception ex)
+        catch (Exception ex)
         {
             _sawmill.Warning($"[ShipLoad] TryResetUseDelays failed on {grid}: {ex.Message}");
-        } */
+        }
 
         // Add new grid to the same station as the console's grid (for IFF / ownership), if any
         if (TryComp<StationMemberComponent>(consoleXform.GridUid, out var stationMember))
@@ -664,10 +664,10 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
                 }
             }
         }
-        /* catch (Exception ex)
+        catch (Exception ex)
         {
             _sawmill.Warning($"Failed to extract ship name from YAML: {ex}");
-        } */
+        }
         return null;
     }
 }

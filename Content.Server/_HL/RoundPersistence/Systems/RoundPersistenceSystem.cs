@@ -238,10 +238,11 @@ public sealed class RoundPersistenceSystem : EntitySystem
 
             //_sawmill.Info($"Pushed CharacterInfo updates to {sessions.Count} players after antag/objective cleanup");
         }
-        /* catch (Exception e)
+        catch (Exception e)
         {
+            // Swallow errors to avoid breaking round startup; optional logging can be enabled.
             _sawmill.Error($"Error refreshing character info after cleanup: {e}");
-        } */
+        }
     }
 
     /// <summary>
